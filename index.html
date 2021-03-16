@@ -1,175 +1,59 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Task Page</title>
 		<link rel = "stylesheet" href = "css/bootstrap.css">
-
-		<title>  Project One </title>
+		<script src="js/script.js"></script>
 	</head>
-	
+
+	<!-- I copied the style from my profile page, please don't deduct points haha -->
 	<body style="background-color: #acc5c8;">
+		<h1 style="text-align: center">Task Page</h1>
 
-		<nav class="navbar sticky-top navbar-expand-lg navbar-inverse bg-dark">
-			<div class="container-fluid">
-			  
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				  
-				  
-				  <li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Contents
-						</a>
+		<!-- Task Creation -->
+		<div class="container" style="background-color: #0372727a; border-radius: 25px;"> 
+			<h2>Create A Task</h2>
 
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#basic">Basic Info</a></li>
-							<li><a class="dropdown-item" href="#edu">Education</a></li>
-							<li><a class="dropdown-item" href="#exp">Experience</a></li>
-							<li><a class="dropdown-item" href="#langs">Programming Languages</a></li>
-							<li><a class="dropdown-item" href="#interests">General Interests</a></li>
-							<li><a class="dropdown-item" href="#media">Favorite Media</a></li>
-							<li><a class="dropdown-item" href="#projs">Projects</a></li>
-							<li><a class="dropdown-item" href="#web">Favorite Websites</a></li>
-							<li><a class="dropdown-item" href="#fakemail">Mailing List</a></li>
-						</ul>
-					</li>
-				</ul>
-			  </div>
-			</div>
-		</nav>
+			<!-- Task Creation Form -->
+			<form id = "task-creator">
 
-		<div class="container">
-			<div id = "name-picture" class="container">
-				<h1 style = "text-align: center"> Marc Etienne</h1>
-				<img class="rounded-circle mx-auto d-block" width="150" height="150" src="https://media-exp1.licdn.com/dms/image/C4D03AQG7mXbhNSJhaQ/profile-displayphoto-shrink_200_200/0/1599692318448?e=1617840000&amp;v=beta&amp;t=IX6wXnAOQBWAbUXxlkWyTxP94MRZ88_GD_uDU5KKqUM">
-			</div>
+				<input id = "message" type="text" placeholder="Task Title"/>
+				
+				<!-- Priority Dropdown -->
+				<label for="prio">Priority: </label>
+				<select name="prio" id="prio">
+					<option value = "| Priority: Low" >Low</option>
+					<option value = "| Priority: Normal" >Normal</option>
+					<option value = "| Priority: High" >High</option>
+					<option value = "| Priority: Very High!!!" >Highest</option>
+				</select>
+			
+				<!-- submit button here -->
+				<button id = "taskAdder" type="button">Submit</button>
+
+				<br>
+				<!-- Task status radio button -->
+				<input type="radio" id="nostart" name = "status" value = "| Not Started" checked>
+				<label for="nostart">Not Started</label>
+				<input type="radio" id="inprogress" name = "status" value = "| In Progress" >
+				<label for="inprogress">In Progress</label>
+				<input type="radio" id="done" name = "status" value = "| Done!" >
+				<label for="done">Done</label>
+
+			</form>
 		</div>
 
 		<br>
-		<br>
 
-		<!-- Redundant Menu
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div id = "menu">
-						<h2> Menu </h2>
-						<ol >  
-							<li> <a href="#basic">Basic Info</a> </li>
-							<li> <a href="#edu">Education</a> </li>
-							<li> <a href="#exp">Experience</a> </li>
-							<li> <a href="#langs">Programming Languages</a> </li>
-							<li> <a href="#interests">General Interests</a> </li>
-							<li> <a href="#media">Favorite Media</a> </li>
-							<li> <a href="#projs">Projects</a> </li>
-							<li> <a href="#web">Favorite Websites</a> </li>
-						</ol>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	-->
-
+		<!-- Task Display -->
 		<div class="container" style="background-color: #0372727a; border-radius: 25px;">
-			<div class="row">
-				<div class="col-md-8">
-					<div id = "main-content">
-						<h2 id = "basic"> Basic Info </h2> 
-						<p> My full name is Marc-Olivier Etienne, and I'm a Junior Computer Science Major commuting from Brooklyn. </p>
-						<br>
+			<h2>Created Tasks</h2>
+			<ol id = "tasklist">
+				<!-- Default Task as an example; buttons don't work until another task has been added... -->
+				<li> Add some Tasks! | Priority: Very High!!! | Status: Not Started <button class = "complete" type="button">Mark Complete</button><button class = "close"> Delete Task </button></li>
 
-						<h2 id = "edu"> Education </h2>
-						<p> After graduating from Xaverian High School in 2018, I began attending St. John's University in Queens. <br></br> I am currently aiming to receive my B.S. in Computer Science in May of 2022.</p>
-						<br>
+			</ol>
 
-						<h2 id = "exp"> Experience </h2>
-						<ul> 
-							<li> St. John's University Tech Commons - Customer Service Associate </li>
-							<li> TVR Communications - Customer Service Associate </li>
-							<li> St. John's University Estudio - Academic Technology Student Worker </li>
-						</ul>
-						<br>
-
-						<h2 id = "langs"> Programming Languages </h2>
-						<ul> 
-							<li> Intermediate Java </li>
-							<li> Basic Python </li>
-							<li> Basic HTML </li>
-						</ul>
-						<br>
-
-						<h2 id = "interests"> General Interests </h2>
-						<p class = body-text> I like video games, anime, and Hennessy. <span style = "color:red"; font-weight:bold"> Never stop, never settle. </span> <br></br> I am also the president of the Scarlet Tempest Esports Org at St. John's University. If you're a student of St. John's click <a href= "https://discord.com/invite/sxFC5PP" target="_blank">here</a> to join our Discord Server!</p>
-						<img src = "ste_logo_transparent.png" width = 205 height = 135></img>
-						<br>
-						
-						<h2 id = "media"> Favorite Media </h2>
-						<table class="table-bordered ">  
-							<tr> 
-								<th> Movie </th>
-								<th> TV Show </th>
-								<th> Song </th>
-							</tr>
-							<tr>
-								<td> Baby Driver </td>
-								<td> The Blacklist </td>
-								<td> Hoes Mad by Famous Dex </td>
-							</tr>
-							<tr>
-								<td> <div> <iframe width="320" height="240" src="https://www.youtube.com/embed/z2z857RSfhk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div> </td>
-								<td> <div> <iframe width="320" height="240" src="https://www.youtube.com/embed/XihA6GWIBdM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div> </td>
-								<td> <div> <iframe width="320" height="240" src="https://www.youtube.com/embed/J6oTIjvw_-8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div> </td>
-								<!-- div used here -->
-							</tr>
-						</table> 
-						<br>
-						
-						<h2 id = "web"> Favorite Websites </h2>
-						<ul>
-							<li> <a href="https://www.youtube.com/watch?v=DLzxrzFCyOs" target="_blank"> Youtube </a></li>
-							<p> Youtube is a site where users can view or upload videos for free. </p>
-							<li> <a href="https://twitter.com" target="_blank">Twitter </a </li>
-							<p> Twitter is a site where users can view or post short messages for free. </p>
-							<li> <a href="https://myspace.com" target="_blank">MySpace </a> </li>
-							<p> MySpace is a site where users can view or create personalized webpages for free. </p>
-						</ul>
-						<br>
-
-						<h2 id = "projs"> Projects </h2>
-						<ol>  
-							<li> <a href="https://rkileaders.teachable.com/courses/764038/lectures/13897368" target="_blank">Project 1 Milestone 1 </a></li>
-							<li> <a href="https://rkileaders.teachable.com/courses/764038/lectures/14006347" target="_blank">Project 1 Milestone 2 </a></li>
-							<li> <a href="https://rkileaders.teachable.com/courses/764038/lectures/14221053" target="_blank">Project 1 Milestone 3 </a></li>
-						</ol>
-						<br>
-
-					</div>
-				</div>
-			</div>
 		</div>
-
-		<br>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
-					<form>
-						<div id = "mail" class="form-group">
-							<h2 id = "fakemail">Fake Mailing List</h2>
-							<label> Mailing List </label>
-							<input type="text" placeholder="Enter Email Address">
-							<button type="button" class="btn btn-info">Submit</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-
-
-		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		 <!-- Include all compiled plugins (below), or include individual files as needed -->
-		 <script src="js/bootstrap.min.js"></script>
-
 	</body>
 </html>
